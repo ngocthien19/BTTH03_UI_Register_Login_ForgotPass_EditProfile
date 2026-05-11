@@ -42,10 +42,16 @@ const loginUserAPI = async (data) => {
   return response.data
 }
 
+const updateProfileAPI = async (data) => {
+  const response = await authorizedAxiosInstance.put(`${API_ROOT}/api/auth/update-profile`, data)
+  return response.data
+}
+
 export const authAPI = {
   registerUserAPI,
   verifyOTPAPI,
   forgotPasswordAPI,
   resetPasswordAPI,
-  loginUserAPI
+  loginUserAPI,
+  updateProfileAPI
 }
