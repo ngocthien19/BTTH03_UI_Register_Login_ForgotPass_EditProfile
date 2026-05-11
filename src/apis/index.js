@@ -37,9 +37,15 @@ const resetPasswordAPI = async (data) => {
   return response.data
 }
 
+const loginUserAPI = async (data) => {
+  const response = await authorizedAxiosInstance.post(`${API_ROOT}/api/auth/login`, data)
+  return response.data
+}
+
 export const authAPI = {
   registerUserAPI,
   verifyOTPAPI,
   forgotPasswordAPI,
-  resetPasswordAPI
+  resetPasswordAPI,
+  loginUserAPI
 }
